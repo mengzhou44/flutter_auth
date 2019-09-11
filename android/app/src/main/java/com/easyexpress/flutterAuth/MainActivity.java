@@ -1,4 +1,4 @@
-package com.example.flutter_auth;
+package com.example.flutterAuth;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;
