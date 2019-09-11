@@ -1,4 +1,4 @@
-package com.example.flutterAuth;
+package com.easyexpress.flutterAuth;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;

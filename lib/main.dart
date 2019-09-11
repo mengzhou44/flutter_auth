@@ -36,13 +36,10 @@ class _MyHomePageState extends State<MyHomePage> {
     print(result);
     switch (result.status) {
       case FacebookLoginStatus.loggedIn:
-        print("step1");
-        this.setState(() async {
-          print("step2");
-          final token = result.accessToken.token;
-          final graphResponse = await http.get(
+        final token = result.accessToken.token;
+        final graphResponse = await http.get(
               'https://graph.facebook.com/v2.12/me?fields=name,first_name,last_name,email&access_token=${token}');
-          print(graphResponse.body);
+        this.setState(() { 
           profile = graphResponse.body;
         });
         break;
@@ -59,12 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
+     
     return Scaffold(
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
@@ -92,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'You have pushed the button this many times:',
+              'Login Status',
             ),
             Text(
               '$profile',
